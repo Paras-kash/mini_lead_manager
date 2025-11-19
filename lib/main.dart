@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:mini_lead_manager/providers/leads_provider.dart';
 import 'package:mini_lead_manager/screens/home_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:mini_lead_manager/models/lead.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Initialize Hive for Flutter and register adapters before opening boxes
+  await Hive.initFlutter();
+  Hive.registerAdapter(LeadAdapter());
+  Hive.registerAdapter(LeadStatusAdapter());
+
   runApp(const MyApp());
 }
 
