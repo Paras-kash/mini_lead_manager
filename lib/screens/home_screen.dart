@@ -5,6 +5,26 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Leads',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black87),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.add_circle_outline_rounded,
+              color: Colors.indigo,
+            ),
+          ),
+        ],
+      ),
+      body: Column(children: [
+
+        ],
+      ),
+    );
   }
 }
